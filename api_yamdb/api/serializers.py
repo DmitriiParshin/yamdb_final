@@ -1,3 +1,4 @@
+from api.validators import get_year_now, username_validator
 from django.conf import settings
 from django.core.validators import MaxValueValidator, MinValueValidator
 from rest_framework.exceptions import ValidationError
@@ -6,8 +7,6 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.relations import SlugRelatedField
 from rest_framework.serializers import (IntegerField, ModelSerializer,
                                         Serializer)
-
-from api.validators import get_year_now, username_validator
 from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
 
