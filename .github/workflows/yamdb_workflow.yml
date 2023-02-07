@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: dimaska29/yamdb:latest
+          tags: dimaska29/yamdb:v3
 
   deploy:
     runs-on: ubuntu-latest
