@@ -1,5 +1,4 @@
 ![yamdb_workflow](https://github.com/DmitriiParshin/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
-
 # yamdb_final
 **REST API** для сервиса YaMDb — базы отзывов о фильмах, книгах и музыке. Проект YaMDb собирает отзывы пользователей на произведения. Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 Произведению может быть присвоен жанр. Новые жанры может создавать только администратор.
