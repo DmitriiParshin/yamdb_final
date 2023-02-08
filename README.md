@@ -39,8 +39,8 @@ ______________________________________________________________________
 ## Как запустить проект:
 1. Клонируйте репозиторий с проектом и перейдите в каталог с ним:
 ```
-git clone https://github.com/DmitriiParshin/infra_sp2
-cd infra_sp2
+git clone https://github.com/DmitriiParshin/yamdb_final
+cd yamdb_final
 ```
 2. Создайте файл .env и заполните его как показано на примере:
 ```
