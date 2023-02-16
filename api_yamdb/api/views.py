@@ -1,21 +1,11 @@
 from api.filters import TitlesFilter
-from api.permissions import (
-    IsAdmin,
-    IsAdminOrOwnerOrReadOnly,
-    IsAdminOrReadOnly,
-)
-from api.serializers import (
-    CategorySerializer,
-    CommentSerializer,
-    GenreSerializer,
-    ReviewSerializer,
-    SignupSerializer,
-    TitleReadSerializer,
-    TitleWriteSerializer,
-    TokenSerializer,
-    UserEditSerializer,
-    UserSerializer,
-)
+from api.permissions import (IsAdmin, IsAdminOrOwnerOrReadOnly,
+                             IsAdminOrReadOnly)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, ReviewSerializer,
+                             SignupSerializer, TitleReadSerializer,
+                             TitleWriteSerializer, TokenSerializer,
+                             UserEditSerializer, UserSerializer)
 from django.conf import settings
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
@@ -25,11 +15,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework.decorators import action, api_view
 from rest_framework.filters import OrderingFilter, SearchFilter
-from rest_framework.generics import (
-    DestroyAPIView,
-    ListCreateAPIView,
-    get_object_or_404,
-)
+from rest_framework.generics import (DestroyAPIView, ListCreateAPIView,
+                                     get_object_or_404)
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response

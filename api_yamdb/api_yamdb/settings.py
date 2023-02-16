@@ -1,5 +1,6 @@
 import os
 from datetime import timedelta
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -10,7 +11,7 @@ SECRET_KEY = os.getenv(
     "SECRET_KEY", "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs"
 )
 
-DEBUG = int(os.getenv("DEBUG", 1))
+DEBUG = int(os.getenv("DEBUG", 0))
 
 ALLOWED_HOSTS = os.getenv(
     "ALLOWED_HOSTS", "158.160.9.121 localhost 127.0.0.1 web"
@@ -64,8 +65,8 @@ WSGI_APPLICATION = "api_yamdb.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.getenv("DB_NAME", os.path.join(BASE_DIR, "db.sqlite3")),
+        "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.postgresql"),
+        "NAME": os.getenv("DB_NAME", "postgres"),
         "USER": os.getenv("POSTGRES_USER", "postgres"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD", "postgres"),
         "HOST": os.getenv("DB_HOST", "db"),
@@ -99,7 +100,7 @@ USE_L10N = True
 USE_TZ = False
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "api/../static")
+STATIC_ROOT = os.path.join(BASE_DIR, "api/../api/static")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "api/media")
