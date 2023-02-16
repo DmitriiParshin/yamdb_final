@@ -46,8 +46,7 @@ cd yamdb_final
 ```
 touch .env
 ```
->_SECRET_KEY=YOUR_SECRET_KEY  
-DB_ENGINE=YOUR_DB_ENGINE  
+>_DB_ENGINE=YOUR_DB_ENGINE  
 DB_NAME=YOUR_DB_NAME  
 POSTGRES_USER=YOUR_POSTGRES_USER  
 POSTGRES_PASSWORD=YOUR_POSTGRES_PASSWORD  
@@ -56,17 +55,19 @@ DB_PORT=YOUR_DB_PORT_
 
 3. Выполните команду для создания образов и запуска в контейнере приложения, сервера и базы данных
 ```
-docker-compose up -d --build
+sudo docker-compose up -d --build
 ```
-4. Создайте и выполните миграции:
+4. Выполните миграции:
 ```
-docker-compose exec web python manage.py makemigrations reviews users
-docker-compose exec web python manage.py migrate
+sudo docker-compose exec web python manage.py migrate
 ```
-5. Создайте суперпользователя и соберите статику:
+5. Соберите статику:
 ```
-docker-compose exec web python manage.py createsuperuser
-docker-compose exec web python manage.py collectstatic --no-input 
+sudo docker-compose exec web python manage.py collectstatic --no-input 
+```
+6. Создайте суперпользователя:
+```
+sudo docker-compose exec web python manage.py createsuperuser
 ```
 __________________________________
 _Ваш проект запустился на http://localhost/  
