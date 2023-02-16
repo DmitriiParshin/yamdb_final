@@ -6,7 +6,7 @@ services:
     volumes:
       - postgres:/var/lib/postgresql/data/
     env_file:
-      - ./.env
+      - ../api_yamdb/.env
   web:
     image: dimaska29/yamdb:latest
     restart: always
@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env
+      - ../api_yamdb/.env
   nginx:
     image: nginx:1.23.3-alpine
     ports:
