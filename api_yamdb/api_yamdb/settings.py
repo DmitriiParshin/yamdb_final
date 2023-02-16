@@ -98,7 +98,7 @@ USE_L10N = True
 USE_TZ = False
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "api/static")
+STATIC_ROOT = os.path.join(BASE_DIR, "api/../static")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "api/media")
@@ -143,4 +143,4 @@ LIMIT_SLUG = 50
 
 LIMIT_NAME = 256
 
-MIN_YEAR = 1000
+MIN_YEAR = 1730

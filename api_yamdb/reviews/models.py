@@ -6,10 +6,8 @@ from users.models import User
 
 
 class CategoryGenreModel(models.Model):
-    name = models.CharField("Название жанра", max_length=settings.LIMIT_NAME)
-    slug = models.SlugField(
-        "Слаг жанра", max_length=settings.LIMIT_SLUG, unique=True
-    )
+    name = models.CharField(max_length=settings.LIMIT_NAME)
+    slug = models.SlugField(max_length=settings.LIMIT_SLUG, unique=True)
 
     class Meta:
         abstract = True

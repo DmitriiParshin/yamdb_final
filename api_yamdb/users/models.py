@@ -9,9 +9,9 @@ class User(AbstractUser):
     MODERATOR = "moderator"
     USER = "user"
     ROLE_CHOICES = (
-        (USER, "Пользователь"),
-        (MODERATOR, "Модератор"),
         (ADMIN, "Администратор"),
+        (MODERATOR, "Модератор"),
+        (USER, "Пользователь"),
     )
     username = models.CharField(
         "Имя пользователя",

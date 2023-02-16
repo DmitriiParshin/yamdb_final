@@ -5,8 +5,11 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.fields import CharField, CurrentUserDefault, EmailField
 from rest_framework.generics import get_object_or_404
 from rest_framework.relations import SlugRelatedField
-from rest_framework.serializers import (IntegerField, ModelSerializer,
-                                        Serializer)
+from rest_framework.serializers import (
+    IntegerField,
+    ModelSerializer,
+    Serializer,
+)
 from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
 
@@ -45,7 +48,10 @@ class TitleReadSerializer(ModelSerializer):
 
 class TitleWriteSerializer(ModelSerializer):
     year = IntegerField(
-        validators=[MinValueValidator(1730), MaxValueValidator(get_year_now)]
+        validators=[
+            MinValueValidator(settings.MIN_YEAR),
+            MaxValueValidator(get_year_now),
+        ]
     )
     genre = SlugRelatedField(
         slug_field="slug", many=True, queryset=Genre.objects.all()

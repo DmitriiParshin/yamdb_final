@@ -23,8 +23,8 @@ class TitleAdmin(admin.ModelAdmin):
     list_select_related = ("category",)
 
     def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        return qs.prefetch_related("genre")
+        queryset = super().get_queryset(request)
+        return queryset.prefetch_related("genre")
 
     def get_genre(self, obj):
         return ", ".join([str(_) for _ in obj.genre.all()])
