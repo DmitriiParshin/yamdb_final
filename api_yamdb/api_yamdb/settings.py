@@ -1,18 +1,19 @@
 import os
 from datetime import timedelta
-from dotenv import load_dotenv
 
-load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "SUP3R-S3CR3T-K3Y-F0R-MY-PR0J3CT")
+SECRET_KEY = "SUP3R-S3CR3T-K3Y-F0R-MY-PR0J3CT"
 
-DEBUG = int(os.getenv("DEBUG", 0))
+DEBUG = True
 
-ALLOWED_HOSTS = os.getenv(
-    "DJANGO_ALLOWED_HOSTS",
-    "158.160.9.121 localhost 127.0.0.1 web").split(" ")
+ALLOWED_HOSTS = [
+    "158.160.9.121",
+    "localhost",
+    "127.0.0.1",
+    "web",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -62,12 +63,12 @@ WSGI_APPLICATION = "api_yamdb.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.getenv("DB_NAME", os.path.join(BASE_DIR, "db.sqlite3")),
-        "USER": os.getenv("POSTGRES_USER", "postgres"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "postgres"),
-        "HOST": os.getenv("DB_HOST", "db"),
-        "PORT": os.getenv("DB_PORT", 5432),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        # "USER": os.getenv("POSTGRES_USER", "postgres"),
+        # "PASSWORD": os.getenv("POSTGRES_PASSWORD", "postgres"),
+        # "HOST": os.getenv("DB_HOST", "db"),
+        # "PORT": os.getenv("DB_PORT", 5432),
     }
 }
 
